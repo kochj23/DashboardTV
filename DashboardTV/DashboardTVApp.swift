@@ -3,9 +3,12 @@
 //  DashboardTV
 //
 //  Created by Jordan Koch on 2026-01-28.
+//  Updated: 2026-01-31 - Added iOS/iPad support with WKWebView
 //  Copyright © 2026 Jordan Koch. All rights reserved.
 //
-//  tvOS companion app for Dashboard Screensaver
+//  Multi-platform companion app for Dashboard Screensaver
+//  - tvOS: Displays dashboard screenshots (no web rendering)
+//  - iOS (iPad): Displays actual dashboards via WKWebView
 //  Receives configuration from macOS app via Bonjour/HTTP
 //
 
@@ -18,10 +21,19 @@ struct DashboardTVApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TVContentView()
+            contentView
                 .environmentObject(configServer)
                 .environmentObject(dashboardManager)
         }
+    }
+
+    @ViewBuilder
+    private var contentView: some View {
+        #if os(iOS)
+        iPadContentView()
+        #else
+        TVContentView()
+        #endif
     }
 }
 
