@@ -9,17 +9,83 @@
 /* Begin PBXBuildFile section */
 		2ECC5D386ECAFCD6EC4BA0DC /* DashboardTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631847B1CD13F293150C0A1 /* DashboardTVApp.swift */; };
 		343D69371CBC9D4EC40615D4 /* TVContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C28CC0A5D5F93069C38BDDE /* TVContentView.swift */; };
+		392899EBD9C260515E9E92B5 /* TVServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE27D705D56A864A521EA98 /* TVServices.framework */; };
+		5FD04DDD9E0AF36779038A39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94DF3169FC68AA1F1B507D7 /* Foundation.framework */; };
+		70D45DA8661486DA57251155 /* DashboardTVTopShelf in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 80A2A9198CC7060F85BB70B5 /* DashboardTVTopShelf */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9880654EA9183D0798FECC37 /* ContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB780A075C41C6609780288 /* ContentProvider.swift */; };
 		E031EF67B04D8C7785C5358D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E92E86DA52F49B72ADE2B87 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4696DAEA0631FAA96629B361 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 938F398973F106ED03AD7E1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 427B594981D1D86C21DF2D54;
+			remoteInfo = DashboardTVTopShelf;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		14C349F6D6DE0411FC7FA29A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				70D45DA8661486DA57251155 /* DashboardTVTopShelf in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1E92E86DA52F49B72ADE2B87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3FE27D705D56A864A521EA98 /* TVServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TVServices.framework; path = System/Library/Frameworks/TVServices.framework; sourceTree = SDKROOT; };
 		4631847B1CD13F293150C0A1 /* DashboardTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTVApp.swift; sourceTree = "<group>"; };
 		4C28CC0A5D5F93069C38BDDE /* TVContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVContentView.swift; sourceTree = "<group>"; };
+		80A2A9198CC7060F85BB70B5 /* DashboardTVTopShelf */ = {isa = PBXFileReference; includeInIndex = 0; path = DashboardTVTopShelf; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E378D589578283E090ED9DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D85008C5972F2A11FD1A8A83 /* DashboardTV.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = DashboardTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D94DF3169FC68AA1F1B507D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		ECFDE44587440D394B392ED6 /* DashboardTVTopShelf.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = DashboardTVTopShelf.entitlements; sourceTree = "<group>"; };
+		FBB780A075C41C6609780288 /* ContentProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		E23744E280CB54E473226318 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FD04DDD9E0AF36779038A39 /* Foundation.framework in Frameworks */,
+				392899EBD9C260515E9E92B5 /* TVServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
+		140BBAA0084570F33F8CCB9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E275BCF9E5D22620DB38ECF /* tvOS */,
+				3FE27D705D56A864A521EA98 /* TVServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4FBD02F64B72333E863754D2 /* DashboardTVTopShelf */ = {
+			isa = PBXGroup;
+			children = (
+				FBB780A075C41C6609780288 /* ContentProvider.swift */,
+				8E378D589578283E090ED9DF /* Info.plist */,
+				ECFDE44587440D394B392ED6 /* DashboardTVTopShelf.entitlements */,
+			);
+			name = DashboardTVTopShelf;
+			path = DashboardTVTopShelf;
+			sourceTree = "<group>";
+		};
 		708C7873B005B50B99955B3C /* DashboardTV */ = {
 			isa = PBXGroup;
 			children = (
@@ -35,13 +101,24 @@
 			children = (
 				708C7873B005B50B99955B3C /* DashboardTV */,
 				F0AD78AE186A861A768B34B6 /* Products */,
+				140BBAA0084570F33F8CCB9D /* Frameworks */,
+				4FBD02F64B72333E863754D2 /* DashboardTVTopShelf */,
 			);
+			sourceTree = "<group>";
+		};
+		7E275BCF9E5D22620DB38ECF /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				D94DF3169FC68AA1F1B507D7 /* Foundation.framework */,
+			);
+			name = tvOS;
 			sourceTree = "<group>";
 		};
 		F0AD78AE186A861A768B34B6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				D85008C5972F2A11FD1A8A83 /* DashboardTV.app */,
+				80A2A9198CC7060F85BB70B5 /* DashboardTVTopShelf */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,17 +140,34 @@
 			buildPhases = (
 				31BA9A0E0047FE4FA152C010 /* Sources */,
 				5967B46A7E02D40C9BE0E5DE /* Resources */,
+				14C349F6D6DE0411FC7FA29A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6682BF9B6C806A2C5406684D /* PBXTargetDependency */,
+			);
+			name = DashboardTV;
+			productName = DashboardTV;
+			productReference = D85008C5972F2A11FD1A8A83 /* DashboardTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		427B594981D1D86C21DF2D54 /* DashboardTVTopShelf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDF9873E51637216C2B3AC55 /* Build configuration list for PBXNativeTarget "DashboardTVTopShelf" */;
+			buildPhases = (
+				8D3247C74DC1DD21ECEC2D17 /* Sources */,
+				E23744E280CB54E473226318 /* Frameworks */,
+				DE5AB8E502EBB78AC88D3769 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = DashboardTV;
-			packageProductDependencies = (
-			);
-			productName = DashboardTV;
-			productReference = D85008C5972F2A11FD1A8A83 /* DashboardTV.app */;
-			productType = "com.apple.product-type.application";
+			name = DashboardTVTopShelf;
+			productName = DashboardTVTopShelf;
+			productReference = 80A2A9198CC7060F85BB70B5 /* DashboardTVTopShelf */;
+			productType = "com.apple.product-type.tv-app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -101,10 +195,12 @@
 			mainGroup = 750D56AEAED094ECEDC50D1B;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
+			productRefGroup = F0AD78AE186A861A768B34B6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				25B13A8B16559293BBDB8AF3 /* DashboardTV */,
+				427B594981D1D86C21DF2D54 /* DashboardTVTopShelf */,
 			);
 		};
 /* End PBXProject section */
@@ -115,6 +211,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E031EF67B04D8C7785C5358D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE5AB8E502EBB78AC88D3769 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,9 +233,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8D3247C74DC1DD21ECEC2D17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9880654EA9183D0798FECC37 /* ContentProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6682BF9B6C806A2C5406684D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DashboardTVTopShelf;
+			target = 427B594981D1D86C21DF2D54 /* DashboardTVTopShelf */;
+			targetProxy = 4696DAEA0631FAA96629B361 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		7F424ED96C5842070C44AF41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DashboardTVTopShelf/DashboardTVTopShelf.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QRRCB8HB3W;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DashboardTVTopShelf/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jordankoch.DashboardTV.topshelf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		8492CD4C8295470FE5367172 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -192,12 +338,38 @@
 			};
 			name = Release;
 		};
+		95DAD5A4F4427A05F4993383 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DashboardTVTopShelf/DashboardTVTopShelf.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QRRCB8HB3W;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = DashboardTVTopShelf/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jordankoch.DashboardTV.topshelf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Debug;
+		};
 		9C5F52AAB3E0800BD9FA8050 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = DashboardTV/DashboardTV.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = DashboardTV;
@@ -289,6 +461,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = DashboardTV/DashboardTV.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = DashboardTV;
@@ -328,6 +501,15 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
+		};
+		CDF9873E51637216C2B3AC55 /* Build configuration list for PBXNativeTarget "DashboardTVTopShelf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F424ED96C5842070C44AF41 /* Release */,
+				95DAD5A4F4427A05F4993383 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
