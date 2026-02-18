@@ -1,5 +1,7 @@
 # DashboardTV
 
+![Build](https://github.com/kochj23/DashboardTV/actions/workflows/build.yml/badge.svg)
+
 tvOS companion app for Dashboard Screensaver. Displays dashboard URLs on Apple TV devices, configured remotely from the macOS Dashboard Screensaver app.
 
 ## Features
