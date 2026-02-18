@@ -67,3 +67,7 @@ MIT License - See LICENSE file for details.
 ## Author
 
 Jordan Koch (kochj23)
+
+---
+
+> **Disclaimer:** This is a personal project created on my own time. It is not affiliated with, endorsed by, or representative of my employer.
