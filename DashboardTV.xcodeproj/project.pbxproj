@@ -12,8 +12,10 @@
 		392899EBD9C260515E9E92B5 /* TVServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE27D705D56A864A521EA98 /* TVServices.framework */; };
 		5FD04DDD9E0AF36779038A39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94DF3169FC68AA1F1B507D7 /* Foundation.framework */; };
 		70D45DA8661486DA57251155 /* DashboardTVTopShelf in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 80A2A9198CC7060F85BB70B5 /* DashboardTVTopShelf */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		88065B15788466788F820DBE /* AIBackendManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C19DDA10AADCD288FDAD44 /* AIBackendManager.swift */; };
 		9880654EA9183D0798FECC37 /* ContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB780A075C41C6609780288 /* ContentProvider.swift */; };
 		E031EF67B04D8C7785C5358D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E92E86DA52F49B72ADE2B87 /* Assets.xcassets */; };
+		F8FB3D0EE6E176169AC7054D /* AIBackendStatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC65944B790BFFFA2C015569 /* AIBackendStatusMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +49,10 @@
 		4C28CC0A5D5F93069C38BDDE /* TVContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVContentView.swift; sourceTree = "<group>"; };
 		80A2A9198CC7060F85BB70B5 /* DashboardTVTopShelf */ = {isa = PBXFileReference; includeInIndex = 0; path = DashboardTVTopShelf; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E378D589578283E090ED9DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7C19DDA10AADCD288FDAD44 /* AIBackendManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AIBackendManager.swift; path = DashboardTV/Managers/AIBackendManager.swift; sourceTree = "<group>"; };
 		D85008C5972F2A11FD1A8A83 /* DashboardTV.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = DashboardTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D94DF3169FC68AA1F1B507D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DC65944B790BFFFA2C015569 /* AIBackendStatusMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AIBackendStatusMenu.swift; path = DashboardTV/Managers/AIBackendStatusMenu.swift; sourceTree = "<group>"; };
 		ECFDE44587440D394B392ED6 /* DashboardTVTopShelf.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = DashboardTVTopShelf.entitlements; sourceTree = "<group>"; };
 		FBB780A075C41C6609780288 /* ContentProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +77,15 @@
 				3FE27D705D56A864A521EA98 /* TVServices.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4840472FFC4E01CF9D3EBE04 /* AIBackend */ = {
+			isa = PBXGroup;
+			children = (
+				A7C19DDA10AADCD288FDAD44 /* AIBackendManager.swift */,
+				DC65944B790BFFFA2C015569 /* AIBackendStatusMenu.swift */,
+			);
+			name = AIBackend;
 			sourceTree = "<group>";
 		};
 		4FBD02F64B72333E863754D2 /* DashboardTVTopShelf */ = {
@@ -103,6 +116,7 @@
 				F0AD78AE186A861A768B34B6 /* Products */,
 				140BBAA0084570F33F8CCB9D /* Frameworks */,
 				4FBD02F64B72333E863754D2 /* DashboardTVTopShelf */,
+				4840472FFC4E01CF9D3EBE04 /* AIBackend */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +244,8 @@
 			files = (
 				2ECC5D386ECAFCD6EC4BA0DC /* DashboardTVApp.swift in Sources */,
 				343D69371CBC9D4EC40615D4 /* TVContentView.swift in Sources */,
+				88065B15788466788F820DBE /* AIBackendManager.swift in Sources */,
+				F8FB3D0EE6E176169AC7054D /* AIBackendStatusMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +382,7 @@
 		9C5F52AAB3E0800BD9FA8050 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = DashboardTV/DashboardTV.entitlements;
@@ -458,7 +474,7 @@
 		D775F35B8F59FE205FB6749C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = DashboardTV/DashboardTV.entitlements;
