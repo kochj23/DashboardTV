@@ -1,0 +1,3 @@
+theme: jekyll-theme-cayman
+title: "DashboardTV"
+description: "tvOS companion app for Dashboard Screensaver — display web dashboards on Apple TV with remote configuration. Built with Swift and SwiftUI."
