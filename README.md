@@ -6,10 +6,10 @@ tvOS companion app for Dashboard Screensaver. Displays dashboard URLs on Apple T
 
 ## Features
 
-- **Remote Configuration** - Receive dashboard URLs from macOS app via Bonjour/HTTP
+- **Remote Configuration** - Receive dashboard URLs from macOS app via Bonjour/HTTP (Hypertext Transfer Protocol)
 - **Dashboard Rotation** - Automatically cycle through configured dashboards
 - **Siri Remote Control** - Play/Pause to toggle rotation, Left/Right to navigate
-- **IP Address Display** - Shows device IP for easy configuration
+- **IP (Internet Protocol) Address Display** - Shows device IP for easy configuration
 - **Persistent Settings** - Remembers configuration across app restarts
 
 ## Requirements
