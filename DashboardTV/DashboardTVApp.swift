@@ -51,6 +51,7 @@ class ConfigurationServer: ObservableObject {
     private var listener: Any? // NWListener in actual implementation
 
     private init() {
+        NovaAPIServer.shared.start()
         startServer()
         advertiseService()
     }
