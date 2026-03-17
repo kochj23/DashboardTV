@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2ECC5D386ECAFCD6EC4BA0DC /* DashboardTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4631847B1CD13F293150C0A1 /* DashboardTVApp.swift */; };
 		343D69371CBC9D4EC40615D4 /* TVContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C28CC0A5D5F93069C38BDDE /* TVContentView.swift */; };
+		379D295E6024A375C78A41B4 /* NovaAPIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B6B3B5628E5DE59A650FAF /* NovaAPIServer.swift */; };
 		392899EBD9C260515E9E92B5 /* TVServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE27D705D56A864A521EA98 /* TVServices.framework */; };
 		5FD04DDD9E0AF36779038A39 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94DF3169FC68AA1F1B507D7 /* Foundation.framework */; };
 		70D45DA8661486DA57251155 /* DashboardTVTopShelf in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 80A2A9198CC7060F85BB70B5 /* DashboardTVTopShelf */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -50,6 +51,7 @@
 		80A2A9198CC7060F85BB70B5 /* DashboardTVTopShelf */ = {isa = PBXFileReference; includeInIndex = 0; path = DashboardTVTopShelf; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E378D589578283E090ED9DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7C19DDA10AADCD288FDAD44 /* AIBackendManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AIBackendManager.swift; path = DashboardTV/Managers/AIBackendManager.swift; sourceTree = "<group>"; };
+		D7B6B3B5628E5DE59A650FAF /* NovaAPIServer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NovaAPIServer.swift; sourceTree = "<absolute>"; };
 		D85008C5972F2A11FD1A8A83 /* DashboardTV.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = DashboardTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D94DF3169FC68AA1F1B507D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DC65944B790BFFFA2C015569 /* AIBackendStatusMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AIBackendStatusMenu.swift; path = DashboardTV/Managers/AIBackendStatusMenu.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				F656FDF309AD8C40A0EFC3A1 /* Views */,
 				1E92E86DA52F49B72ADE2B87 /* Assets.xcassets */,
 				4631847B1CD13F293150C0A1 /* DashboardTVApp.swift */,
+				D7B6B3B5628E5DE59A650FAF /* NovaAPIServer.swift */,
 			);
 			path = DashboardTV;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				343D69371CBC9D4EC40615D4 /* TVContentView.swift in Sources */,
 				88065B15788466788F820DBE /* AIBackendManager.swift in Sources */,
 				F8FB3D0EE6E176169AC7054D /* AIBackendStatusMenu.swift in Sources */,
+				379D295E6024A375C78A41B4 /* NovaAPIServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
