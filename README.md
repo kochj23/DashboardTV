@@ -1,10 +1,11 @@
 # DashboardTV
 
-![Build](https://github.com/kochj23/DashboardTV/actions/workflows/build.yml/badge.svg)
+[![Build](https://github.com/kochj23/DashboardTV/actions/workflows/build.yml/badge.svg)](https://github.com/kochj23/DashboardTV/actions)
 ![Platform: tvOS 17+](https://img.shields.io/badge/platform-tvOS%2017%2B-black)
 ![Platform: iPadOS 17+](https://img.shields.io/badge/platform-iPadOS%2017%2B-blue)
 ![Swift 5.9](https://img.shields.io/badge/Swift-5.9-orange)
-![License: MIT](https://img.shields.io/badge/license-MIT-green)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+![Tests](https://img.shields.io/badge/tests-20%20passed-brightgreen.svg)
 
 A multi-platform tvOS and iPadOS companion app for
 [Dashboard Screensaver](https://github.com/kochj23/DashboardScreensaver).
@@ -34,45 +35,31 @@ discovery and a built-in HTTP configuration server.
 
 ## Architecture
 
-```
-+--------------------------------------------------------------+
-|                     macOS Host Machine                        |
-|                                                               |
-|  +------------------------+                                   |
-|  | Dashboard Screensaver  |---- Bonjour Discovery ----------+|
-|  | (macOS app)            |---- HTTP POST /api/configure ---+|
-|  +------------------------+                                  ||
-+--------------------------------------------------------------+|
-                                                               ||
-                         LAN (Wi-Fi / Ethernet)                ||
-                                                               ||
-+--------------------------------------------------------------+|
-|                     Apple TV / iPad                           ||
-|                                                               ||
-|  +---------------------------+    +------------------------+ ||
-|  |     DashboardTVApp        |    |   Top Shelf Extension  | ||
-|  |                           |    |   (ContentProvider)    | ||
-|  |  +---------------------+  |    +----------+-------------+ ||
-|  |  | ConfigurationServer |<-+---------------+-- App Group   ||
-|  |  | (port 8080)         |  |    via shared UserDefaults    ||
-|  |  +--------+------------+  |                               ||
-|  |           |               |                               ||
-|  |           v               |                               ||
-|  |  +---------------------+  |    +------------------------+ ||
-|  |  | TVDashboardManager  |  |    |   AIBackendManager     | ||
-|  |  | - URL list          |  |    |   - Ollama             | ||
-|  |  | - Rotation timer    |  |    |   - TinyLLM            | ||
-|  |  | - Settings store    |  |    |   - TinyChat           | ||
-|  |  +--------+------------+  |    +------------------------+ ||
-|  |           |               |                               ||
-|  |           v               |                               ||
-|  |  +---------------------+  |    +------------------------+ ||
-|  |  | Platform View       |  |    |   NovaAPIServer        |<+
-|  |  |  tvOS: TVContentView|  |    |   (port 37429,         | |
-|  |  |  iOS:  iPadContent  |  |    |    loopback only)      | |
-|  |  +---------------------+  |    +------------------------+ |
-|  +---------------------------+                               |
-+--------------------------------------------------------------+
+```mermaid
+graph TB
+    subgraph Mac["macOS Host"]
+        DS[Dashboard Screensaver<br/>macOS app]
+    end
+
+    DS -->|Bonjour Discovery| CS
+    DS -->|HTTP POST /api/configure| CS
+
+    subgraph Device["Apple TV / iPad"]
+        direction TB
+        CS[ConfigurationServer<br/>port 8080, Bonjour _dashboardtv._tcp]
+        CS --> TDM[TVDashboardManager<br/>URL list, rotation timer, settings]
+        TDM --> TV[tvOS: TVContentView<br/>Image-based display]
+        TDM --> iPad[iPadOS: iPadContentView<br/>Live WKWebView]
+
+        ABM[AIBackendManager<br/>Ollama, TinyLLM, TinyChat]
+        NAS[NovaAPIServer<br/>port 37429, loopback]
+
+        subgraph TopShelf["Top Shelf Extension"]
+            TS[ContentProvider<br/>Dashboard list + controls]
+        end
+
+        CS -.->|App Group<br/>shared UserDefaults| TS
+    end
 ```
 
 ### Data Flow
@@ -432,6 +419,37 @@ The project includes several Ruby helper scripts for advanced setup:
 | configure_app_groups.rb   | Configures App Group entitlements         |
 | fix_bundle_ids.rb         | Fixes bundle identifier consistency       |
 | fix_topshelf_paths.rb     | Corrects Top Shelf file path references   |
+
+---
+
+## Testing
+
+The project includes an XCTest suite covering models, configuration codability, AI backend types, and security.
+
+### Test Suites
+
+| Suite | Tests | Coverage |
+|-------|-------|----------|
+| TVConfigurationTests | 4 | Codable round-trip, empty URLs, large URL list, minimal config |
+| TVSettingsTests | 3 | Default values, codable, modification |
+| AIBackendTests | 5 | All cases, raw values, icons, descriptions, attribution, codable |
+| AIBackendErrorTests | 2 | Error descriptions exist and are non-empty |
+| URLSafetyTests | 3 | Valid URL construction, edge cases, malicious URLs, decodability |
+| DashboardTVSecurityTests | 5 | No hardcoded credentials, loopback API, correct port, response security, app group ID, UserDefaults safety |
+
+### Running Tests
+
+```bash
+# Build tests for tvOS Simulator
+xcodebuild build-for-testing -project DashboardTV.xcodeproj \
+  -scheme DashboardTVTests \
+  -destination 'generic/platform=tvOS Simulator'
+
+# Run on a connected Apple TV
+xcodebuild test -project DashboardTV.xcodeproj \
+  -scheme DashboardTVTests \
+  -destination 'platform=tvOS,name=Living Room'
+```
 
 ---
 
